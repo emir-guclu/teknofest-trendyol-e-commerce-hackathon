@@ -1,0 +1,35 @@
+model:
+  name: CatBoost
+  params:
+    iterations: 1000
+    learning_rate: 0.1
+    depth: 6
+    l2_leaf_reg: 3
+    loss_function: Logloss
+    eval_metric: AUC
+    random_seed: 42
+    early_stopping_rounds: 50
+
+data:
+  # Latest enriched feature sets (produced at the end of 01_data_preparation.ipynb)
+  train_data_path: "data/train_data_v5.parquet"
+  test_data_path: "data/test_data_v5.parquet"
+  # JSON file persisted earlier (e.g. from v2) listing categorical feature names
+  cat_features_json: "data/cat_features.json"
+  # Fallback categorical features (used if JSON is missing)
+  cat_features:
+    - user_id_hashed
+    - content_id_hashed
+    - leaf_category_name
+    - user_gender
+    - search_term_normalized
+
+inference:
+  # Weight for blending ordered vs clicked probabilities: final_score = w * p_order + (1-w) * p_click
+  ensemble_weight_w: 0.45
+
+output:
+  # Directories / files for trained models & submission
+  local_models_dir: "models/local"      # time-split validation models
+  full_models_dir: "models/real"        # full-train competition models
+  submission_file_path: "submission/submission.csv"

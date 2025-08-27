@@ -1,0 +1,15 @@
+yaml
+pandas
+numpy
+polars
+pyarrow
+catboost
+scikit-learn  # (optional) general ML utilities
+torch         # reranker model backbone
+transformers  # Hugging Face reranker models
+tqdm          # progress bars
+pyyaml        # configuration handling
+jsonschema    # (optional) config validation
+jupyter       # notebook environment
+matplotlib    # (optional) plotting
+seaborn       # (optional) plotting enhancements

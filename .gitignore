@@ -1,0 +1,39 @@
+# --- Data & large artifacts (not distributed) ---
+data/
+*.parquet
+*.csv
+*.feather
+
+# Models & submissions
+models/
+submission/
+*.cbm
+submission.csv
+
+# Metric original file (keep local only)
+trendyol_custom_auc.py
+
+# Cat feature lists and caches
+cat_features*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# Environments
+.env
+.venv
+venv/
+env/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE / tooling
+.idea/
+.vscode/
+*.swp
+*.swo

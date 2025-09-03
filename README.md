@@ -6,7 +6,7 @@ Modeling pipeline (feature engineering → gradient boosted ranking/classificati
 
 ```
 trendyol-ecommerce-hackathon/
-├── figer_denemeler/
+├── diger_denemeler/
 │   ├── *.py , *.ipynb olarak yaptığımız birçok deme dosyasını içerir...
 ├── notebooks/
 │   ├── 01_data_preparation.ipynb      # Multi‑stage feature pipeline (v2 → v5 datasets)
